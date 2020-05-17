@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.LoginActivity">
+
+
+    <LinearLayout
+        android:id="@+id/topview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:padding="10dp"
+            android:layout_gravity="left"
+            android:id="@+id/backspace"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ImageView>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_below="@+id/topview"
+        android:fontFamily="@font/calibri"
+        android:text="Select"
+        android:id="@+id/st1"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:id="@+id/st2"
+        android:layout_below="@+id/st1"
+        android:fontFamily="@font/calibri"
+        android:text="your State!"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:layout_marginTop="05dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <LinearLayout
+        android:layout_below="@+id/st2"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recyclerview"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ProgressBar>
+    <Button
+        android:fontFamily="@font/calibri"
+        android:id="@+id/state"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:background="@color/golden"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Button>
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "485678245000",
+    "firebase_url": "https://boozevendor-6a099.firebaseio.com",
+    "project_id": "boozevendor-6a099",
+    "storage_bucket": "boozevendor-6a099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485678245000:android:8910aa83bd5f9fc26f2b3d",
+        "android_client_info": {
+          "package_name": "com.sky21.booze_vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485678245000-en25e1cpaaqqvrdcjd4s9i5kf5mdd9vj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sky21.booze_vendor",
+            "certificate_hash": "43ab1f7925cf350a18a58405283bc64cdcbe3c58"
+          }
+        },
+        {
+          "client_id": "485678245000-ekpc1usddr8dikqm0udpi31uav8ju6tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgAZtW7qHd2JqUbKE3q46BoV87aASXztg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485678245000-ekpc1usddr8dikqm0udpi31uav8ju6tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

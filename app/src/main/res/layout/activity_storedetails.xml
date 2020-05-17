@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.RegisterActivity">
+
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:padding="10dp"
+            android:layout_gravity="left"
+            android:id="@+id/backspace"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ImageView>
+    </LinearLayout>
+
+    <TextView
+        android:fontFamily="@font/calibri"
+        android:text="Add"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:fontFamily="@font/calibri"
+        android:text="store details!"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:layout_marginTop="05dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:text="Store Name"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:padding="10sp"
+            android:fontFamily="@font/calibri"            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+
+            android:fontFamily="@font/calibri"
+
+            android:singleLine="true"
+            android:id="@+id/store_name"
+            android:background="@drawable/stroke"
+            android:hint="Enter your name here"
+            android:textSize="14dp"
+            android:padding="14sp"
+            android:paddingRight="12sp"
+            android:paddingLeft="12sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+
+        <TextView
+
+            android:text="License Number"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:padding="10sp"
+            android:fontFamily="@font/calibri"            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <EditText
+            android:singleLine="true"
+            android:background="@drawable/stroke"
+            android:hint="Enter your store license number"
+            android:padding="14sp"
+            android:paddingRight="12sp"
+            android:id="@+id/licence_no"
+            android:fontFamily="@font/calibri"
+            android:paddingLeft="12sp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+
+        <TextView
+
+            android:text="License Valid Till"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:padding="10sp"
+            android:fontFamily="@font/calibri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+        <TextView
+            android:singleLine="true"
+            android:background="@drawable/stroke"
+            android:hint="store license valid till date"
+            android:padding="14sp"
+            android:paddingRight="12sp"
+            android:id="@+id/valid_till"
+            android:fontFamily="@font/calibri"
+            android:paddingLeft="12sp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri"
+            android:padding="10dp"
+            android:text="Select State"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"></TextView>
+
+        <Spinner
+            android:singleLine="true"
+            android:background="@drawable/stroke"
+            android:hint="Enter your password here"
+            android:paddingRight="12sp"
+            android:id="@+id/spinner"
+            android:fontFamily="@font/calibri"
+            android:inputType="textPassword"
+            android:paddingLeft="12sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:textSize="12dp"
+            android:layout_height="40sp"></Spinner>
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri"
+            android:padding="10dp"
+            android:text="Store address"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:singleLine="true"
+            android:background="@drawable/stroke"
+            android:hint="Enter your store address"
+            android:padding="14sp"
+            android:paddingRight="12sp"
+            android:id="@+id/adddress"
+            android:fontFamily="@font/calibri"
+            android:paddingLeft="12sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"></TextView>
+
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:id="@+id/progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ProgressBar>
+
+        <!--  <TextView
+
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/calibri"
+              android:padding="10dp"
+              android:text="Store Address"
+              android:textColor="@color/black"
+              android:textSize="16dp"
+              android:textStyle="bold"></TextView>-->
+
+        <!--<EditText
+            android:singleLine="true"
+            android:background="@drawable/stroke"
+            android:hint="Enter your store address here"
+            android:padding="14sp"
+            android:paddingRight="12sp"
+            android:id="@+id/address"
+            android:fontFamily="@font/calibri"
+            android:paddingLeft="12sp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"></EditText>-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:visibility="gone"
+            android:id="@+id/submit"
+            android:textStyle="bold"
+            android:fontFamily="@font/calibri"
+            android:layout_alignParentBottom="true"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:background="@color/golden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Button>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Latitude:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/latitude_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/latitude"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/latitude"
+            android:textSize="16sp" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Longitude:"
+            android:layout_marginTop="24dp"
+            android:textSize="18sp" />
+        <TextView
+            android:textColor="@android:color/white"
+            android:id="@+id/longitude_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/longitude"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/longitude"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SetlocationActivity" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Location"
+                    android:textSize="20dp"
+                    android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <!--<androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:contentPadding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Change"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                </androidx.cardview.widget.CardView>-->
+            </RelativeLayout>
+
+            <TextView
+                android:padding="10sp"
+                android:id="@+id/currentlocation"
+                android:layout_width="wrap_content"
+                android:text="currentLocation"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"></TextView>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/houseno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/black"
+                    android:textColor="@android:color/black"
+                    android:hint="House/Flat/Block No"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/landmarkkk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/black"
+                    android:textColor="@android:color/black"
+                    android:hint="Landmark"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+            <Button
+
+                android:layout_gravity="center"
+                android:id="@+id/continueinformation"
+                android:textColor="@color/white"
+                android:text="Add Address"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/add"
+                android:background="@drawable/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></Button>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</RelativeLayout>
