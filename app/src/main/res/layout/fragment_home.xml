@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:padding="10sp"
+            android:textSize="17sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/calibri"
+            android:text="Products list"
+            android:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topview"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/filter_item_list" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/clear_all"
+            android:fontFamily="@font/calibri"
+            android:textColor="@color/white"
+            android:background="@color/colorAccent"
+            android:layout_weight="1"
+            android:text="Clear All"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+        </Button>
+        <Button
+            android:id="@+id/add_products"
+            android:fontFamily="@font/calibri"
+            android:background="@color/golden"
+            android:layout_weight="1"
+            android:text="Add Products"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content">
+
+        </Button>
+    </LinearLayout>
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ProgressBar>
+</LinearLayout>

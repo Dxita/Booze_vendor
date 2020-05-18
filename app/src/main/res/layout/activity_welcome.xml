@@ -51,7 +51,7 @@
 
     <ImageView
         android:layout_marginTop="20dp"
-        android:src="@drawable/newlogo"
+        android:src="@mipmap/theka"
         android:layout_width="match_parent"
         android:layout_height="150sp"></ImageView>
 

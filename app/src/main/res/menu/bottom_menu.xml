@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/action_item1"
+        android:icon="@drawable/ic_playlist_add_black_24dp"
+        android:title="Add Products"/>
+
+    <item
+        android:id="@+id/action_item3"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="Pending Orders"/>
+    <item
+        android:id="@+id/action_item4"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="Pending(Customer)"/>
+
+    <item
+        android:id="@+id/action_item5"
+        android:icon="@drawable/ic_done_black_24dp"
+        android:title="Picked"/>
+
+    <item
+        android:id="@+id/action_item6"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Account"/>
+</menu>
+
+<!--
+    android:icon="@mipmap/profile"
+-->
