@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -57,8 +59,10 @@ public class HomeFragment extends Fragment {
     ProgressBar progressBar;
     LinearLayoutManager layoutManager;
     ArrayList<HashMap<String, String>> storeList = new ArrayList<>();
+    ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
+
     String state,token;
-     Mainadapter mainadapter;
+
     String[] category_list = {"Vodka","Gin","Tequila","Rum","Whiskey","Beer","Brandy"};
 
     public HomeFragment() {
@@ -104,10 +108,7 @@ public class HomeFragment extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if (!(storeList== null))
-                {
-                    storeList.clear();
-                }
+
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getString("success").equalsIgnoreCase("true"))
@@ -117,10 +118,15 @@ public class HomeFragment extends Fragment {
                         for (int i=0; i<jsonArray.length(); i++)
                         {
                             JSONObject object=jsonArray.getJSONObject(i);
+                            HashMap<String,String>param=new HashMap<>();
+                            param.put("state",object.getString("state"));
+
+                            arrayList.add(param);
+
 
                             JSONArray jsonArray1=object.getJSONArray("products");
                             {
-                                for (int j=0; j<jsonArray.length(); j++)
+                                for (int j=0; j<jsonArray1.length();  j++)
                                 {
                                     JSONObject object1=jsonArray1.getJSONObject(j);
                                     HashMap<String,String>map=new HashMap<>();
@@ -134,12 +140,15 @@ public class HomeFragment extends Fragment {
                                     Log.d("mapppppppppppppp", String.valueOf(map));
                                     storeList.add(map);
 
+
                                     //  Toast.makeText(MainActivity.this, ""+response , Toast.LENGTH_SHORT).show();
                                 }
+
                             }
+                            Mainadapter mainadapter = new Mainadapter(getActivity(), storeList);
+                            category_rv.setAdapter(mainadapter);
                         }
-                        mainadapter = new Mainadapter(getActivity(), storeList);
-                        category_rv.setAdapter(mainadapter);
+
 
                     }
 
@@ -198,9 +207,9 @@ public class HomeFragment extends Fragment {
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             final HashMap<String, String> map = storelist.get(position);
             holder.name.setText(map.get("name"));
-            holder.price.setText(getString(R.string.rupee)+map.get("price"));
+            holder.price.setText("Price"+" "+getString(R.string.rupee)+map.get("price"));
 
-            holder.size.setText(map.get("quantity")+"ml");
+            holder.size.setText("Size"+" "+map.get("quantity")+"ml");
 
 
 
@@ -223,4 +232,6 @@ public class HomeFragment extends Fragment {
             size=view.findViewById(R.id.size);
         }
     }
+
+
 }

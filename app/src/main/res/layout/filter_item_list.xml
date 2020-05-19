@@ -36,7 +36,7 @@
     <TextView
         android:padding="05sp"
         android:id="@+id/name"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:fontFamily="@font/calibri"
@@ -46,16 +46,17 @@
                 <TextView
                     android:padding="05sp"
                     android:text="nnnnnnn"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/calibri"
                     android:id="@+id/price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"></TextView>
                 <TextView
+                    android:layout_marginBottom="05sp"
                     android:padding="05sp"
                     android:text="mmmmmmmmmm"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/calibri"
                     android:id="@+id/size"

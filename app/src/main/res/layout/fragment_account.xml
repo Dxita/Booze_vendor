@@ -84,6 +84,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+
                                 android:fontFamily="@font/calibri"
                                 android:text="Store name"
                                 android:id="@+id/profilename"
