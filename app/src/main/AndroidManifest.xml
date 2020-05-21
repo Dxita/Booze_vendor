@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectStateActivity"></activity>
+        <activity android:name=".ResetActivity"></activity>
+        <activity android:name=".ForgotActivity" />
+        <activity android:name=".SelectStateActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -33,7 +35,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Login.SplashActivity" />
+        <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Login.WelcomeActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".SearchActivity" />
@@ -42,7 +44,7 @@
         <activity android:name=".Login.RegisterActivity" />
         <activity android:name=".StoredetailsActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Login.LoginActivity">
+        <activity android:name=".Login.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

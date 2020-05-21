@@ -28,7 +28,7 @@
 
     <TextView
         android:fontFamily="@font/calibri"
-        android:text="Welcome"
+        android:text="Generate"
         android:textColor="@color/black"
         android:textSize="28dp"
         android:layout_marginTop="20dp"
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"></TextView>
     <TextView
         android:fontFamily="@font/calibri"
-        android:text="back!"
+        android:text="new password!"
         android:textColor="@color/black"
         android:textSize="28dp"
         android:layout_marginTop="05dp"
@@ -57,7 +57,7 @@
 
         <TextView
 
-            android:text="Mobile"
+            android:text="New Password"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -73,7 +73,7 @@
             android:layout_marginTop="08sp"
             android:background="@drawable/stroke"
             android:hint="Enter your mobile number here"
-            android:inputType="number"
+            android:inputType="textPassword"
             android:textSize="14dp"
             android:padding="14sp"
             android:paddingRight="12sp"
@@ -84,7 +84,7 @@
 
         <TextView
 
-            android:text="Password"
+            android:text="Confirm Password"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -109,17 +109,7 @@
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
-        <TextView
 
-            android:text="Forgot Password?"
-            android:id="@+id/forgot"
-            android:fontFamily="@font/calibri"
-            android:layout_marginTop="18dp"
-            android:padding="10dp"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></TextView>
 
 
         <ProgressBar
@@ -137,10 +127,10 @@
         android:layout_height="wrap_content">
         <Button
             android:fontFamily="@font/calibri"
-            android:id="@+id/signin"
+            android:id="@+id/submit"
             android:textStyle="bold"
             android:layout_alignParentBottom="true"
-            android:text="Sign In"
+            android:text="Reset Password"
             android:textColor="@color/white"
             android:layout_gravity="center"
             android:background="@color/golden"

@@ -7,13 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.sky21.booze_vendor.MainActivity;
 import com.sky21.booze_vendor.R;
+import com.sky21.booze_vendor.SharedHelper;
 
 
 public class WelcomeActivity extends AppCompatActivity {
+    ImageView imageView;
+    Animation anim;
     Button signin,signup;
     ImageView backspace;
     @Override
@@ -51,6 +57,32 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(signup);
             }
         });
+
+
+        imageView=(ImageView)findViewById(R.id.image);
+
+        // Declare an imageView to show the animation.
+        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
+        anim.setDuration(1000);// Create the animation.
+        anim.setAnimationListener(new Animation.AnimationListener()
+        {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+                // startActivity(new Intent(this,HomeActivity.class));
+                // HomeActivity.class is the activity to go after showing the splash screen.
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        imageView.startAnimation(anim);
+
     }
 
     public void onBackPressed() {

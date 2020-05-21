@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.sky21.booze_vendor.ForgotActivity;
 import com.sky21.booze_vendor.MainActivity;
 import com.sky21.booze_vendor.R;
 import com.sky21.booze_vendor.SelectStateActivity;
@@ -36,6 +38,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     Button signin;
     ImageView backspace;
+    TextView forgotpassword;
     EditText phone, password;
     ProgressBar progressBar;
 
@@ -52,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbar);
         signin = findViewById(R.id.signin);
         backspace = findViewById(R.id.backspace);
+        forgotpassword=findViewById(R.id.forgot);
         phone.setText("8290638499");
         password.setText("1234567");
 
@@ -82,6 +86,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), ForgotActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void api() {

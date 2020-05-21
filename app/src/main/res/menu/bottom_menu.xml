@@ -13,7 +13,7 @@
         android:title="Pending Orders"/>
     <item
         android:id="@+id/action_item4"
-        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:icon="@drawable/ic_people_outline_black_24dp"
         android:title="Pending(Customer)"/>
 
     <item
