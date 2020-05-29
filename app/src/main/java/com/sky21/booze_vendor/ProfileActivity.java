@@ -21,6 +21,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.sky21.booze_vendor.Login.WelcomeActivity;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,24 +31,25 @@ import java.util.Map;
 public class ProfileActivity extends AppCompatActivity {
     CardView logout,orders,settings;
     TextView backspace;
+
+    String token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        getSupportActionBar().hide();
         getSupportActionBar().hide();
         logout=findViewById(R.id.c5);
         orders=findViewById(R.id.c2);
         settings=findViewById(R.id.c4);
         backspace=findViewById(R.id.addressId);
 
+
+        token=SharedHelper.getKey(ProfileActivity.this,"token");
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 logout_api();
-                /*Intent intent=new Intent(getApplicationContext(), WelcomeActivity.class);
-                startActivity(intent);*/
 
             }
         });
@@ -70,15 +72,15 @@ public class ProfileActivity extends AppCompatActivity {
         orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* Intent i=new Intent(getApplicationContext(), HistoryActivity.class);
-                startActivity(i);*/
+
             }
         });
+
     }
 
-    private void logout_api()  {
+    private void logout_api() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String url = "https://missionlockdown.com/BoozeApp/api/logout";
+        String url = "https://boozeapp.co/Booze-App-Api/api/logout";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -95,7 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
                         editor.clear();
                         editor.apply();
                         Intent intent = new Intent(ProfileActivity.this,
-                                WelcomeActivity.class);
+                                WelcomeActivity .class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();

@@ -24,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.sky21.booze_vendor.Login.OTPActivity;
 import com.sky21.booze_vendor.MainActivity;
+import com.sky21.booze_vendor.MapsActivity;
 import com.sky21.booze_vendor.R;
 import com.sky21.booze_vendor.SharedHelper;
 
@@ -96,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void api() {
         progressBar.setVisibility(View.VISIBLE);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String url = "https://missionlockdown.com/BoozeApp/api/register";
+        String url = "https://boozeapp.co/Booze-App-Api/api/register";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -107,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
                         String phonenumber = "+" + code + mobile.getText().toString();
                         SharedHelper.putKey(RegisterActivity.this,"number",phonenumber);
 
-                        Intent signup = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent signup = new Intent(getApplicationContext(), OTPActivity.class);
 
                         signup.putExtra("PHONE",phonenumber);
                         startActivity(signup);

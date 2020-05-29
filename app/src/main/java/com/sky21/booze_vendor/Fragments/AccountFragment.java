@@ -81,7 +81,7 @@ public class AccountFragment extends Fragment {
 
     private void logout_api()  {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        String url = "https://missionlockdown.com/BoozeApp/api/logout";
+        String url = "https://boozeapp.co/Booze-App-Api/api/logout";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

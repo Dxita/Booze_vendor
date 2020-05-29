@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".UserAccount.ProfileActivity">
 
     <LinearLayout
         android:id="@+id/topview"
@@ -103,7 +103,7 @@
 
                             <TextView
                                 android:fontFamily="@font/calibri"
-                                android:text="Store name"
+                                android:text="name"
                                 android:id="@+id/profilename"
                                 android:layout_width="match_parent"
                                 android:gravity="center_horizontal"
@@ -118,16 +118,6 @@
 
                                 android:textColor="@color/black"
                                 android:id="@+id/mobileno"
-                                android:layout_width="match_parent"
-                                android:textSize="16dp"
-                                android:gravity="center_horizontal"
-                                android:layout_height="wrap_content" />
-                            <TextView
-                                android:text="Store address"
-                                android:fontFamily="@font/calibri"
-
-                                android:textColor="@color/black"
-                                android:id="@+id/address"
                                 android:layout_width="match_parent"
                                 android:textSize="16dp"
                                 android:gravity="center_horizontal"

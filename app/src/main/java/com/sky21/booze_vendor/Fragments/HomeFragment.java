@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.sky21.booze_vendor.R;
 import com.sky21.booze_vendor.SharedHelper;
 
@@ -104,7 +107,7 @@ public class HomeFragment extends Fragment {
     private void api() {
         progressBar.setVisibility(View.VISIBLE);
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        String url = "https://missionlockdown.com/BoozeApp/api/states/products?state_id=1";
+        String url = "https://boozeapp.co/Booze-App-Api/api/states/products?state_id=1";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -135,7 +138,9 @@ public class HomeFragment extends Fragment {
                                     map.put("state_id",object1.getString("state_id"));
                                     map.put("name",object1.getString("name"));
                                     map.put("price",object1.getString("price"));
-                                    map.put("quantity",object1.getString("quantity"));
+                                    map.put("size",object1.getString("size"));
+                                    map.put("image",object1.getString("image"));
+
 
                                     Log.d("mapppppppppppppp", String.valueOf(map));
                                     storeList.add(map);
@@ -209,7 +214,24 @@ public class HomeFragment extends Fragment {
             holder.name.setText(map.get("name"));
             holder.price.setText("Price"+" "+getString(R.string.rupee)+map.get("price"));
 
-            holder.size.setText("Size"+" "+map.get("quantity")+"ml");
+            holder.size.setText("Size"+" "+map.get("size")+"ml");
+            Glide.with(context).load(map.get("image")).into(holder.img);
+
+            holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                    if (buttonView.isChecked())
+                    {
+                        add(map.get("id"));
+                    }
+                    else
+                    {
+                        remove(map.get("id"));
+
+                    }
+                }
+            });
 
 
 
@@ -222,14 +244,125 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    private void remove(final String id) {
+        RequestQueue requestQueue=Volley.newRequestQueue(getActivity());
+        String url="https://boozeapp.co/Booze-App-Api/api/remove-product";
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+
+                try {
+                    JSONObject jsonObject=new JSONObject(response);
+                    if (jsonObject.getString("success").equalsIgnoreCase("true"))
+                    {
+                        Toast.makeText(getActivity(), "Product removed successfully", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                // Basic Authentication
+                //String auth = "Basic " + Base64.encodeToString(CONSUMER_KEY_AND_SECRET.getBytes(), Base64.NO_WRAP);
+
+                headers.put("Authorization", "Bearer " + token);
+                return headers;
+
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String>map=new HashMap<>();
+                map.put("store_id","1");
+                map.put("product_id",id);
+                return map;
+            }
+        };
+
+        requestQueue.add(stringRequest);
+    }
+
+    private void add(final String id) {
+        RequestQueue requestQueue=Volley.newRequestQueue(getActivity());
+        String url="https://boozeapp.co/Booze-App-Api/api/add-product";
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+
+                try {
+                    JSONObject jsonObject=new JSONObject(response);
+                    if (jsonObject.getString("success").equalsIgnoreCase("true"))
+                    {
+                        Toast.makeText(getActivity(), "Product added successfully", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                // Basic Authentication
+                //String auth = "Basic " + Base64.encodeToString(CONSUMER_KEY_AND_SECRET.getBytes(), Base64.NO_WRAP);
+
+                headers.put("Authorization", "Bearer " + token);
+                return headers;
+
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String>map=new HashMap<>();
+                map.put("store_id","1");
+                map.put("product_id",id);
+                return map;
+            }
+        };
+
+        requestQueue.add(stringRequest);
+    }
+
+
     private class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, price,size;
+        CheckBox checkBox;
+        ImageView img;
         public MyViewHolder(View view) {
             super(view);
 
             name=view.findViewById(R.id.name);
             price=view.findViewById(R.id.price);
             size=view.findViewById(R.id.size);
+            checkBox=view.findViewById(R.id.checkbox);
+            img=view.findViewById(R.id.img);
         }
     }
 

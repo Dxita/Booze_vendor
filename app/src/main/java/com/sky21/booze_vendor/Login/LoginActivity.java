@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         backspace = findViewById(R.id.backspace);
         forgotpassword=findViewById(R.id.forgot);
         phone.setText("8290638499");
-        password.setText("1234567");
+        password.setText("123456");
 
         backspace.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
     private void api() {
         progressBar.setVisibility(View.VISIBLE);
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String url = "https://missionlockdown.com/BoozeApp/api/login";
+        String url = "https://boozeapp.co/Booze-App-Api/api/login";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

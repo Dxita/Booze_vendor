@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     android:background="@color/white"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,6 +9,13 @@
     android:layout_height="match_parent"
     tools:context=".Login.RegisterActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_marginLeft="10dp"
@@ -31,7 +38,7 @@
         android:text="Add"
         android:textColor="@color/black"
         android:textSize="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="15sp"
         android:layout_marginLeft="15sp"
         android:layout_width="match_parent"
@@ -54,6 +61,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+<de.hdodenhof.circleimageview.CircleImageView
+    android:src="@drawable/ic_add_a_photo_black_24dp"
+    android:backgroundTint="@color/colorAccent"
+    android:layout_gravity="center"
+    android:id="@+id/image"
+    android:layout_width="90dp"
+    android:layout_height="90dp"></de.hdodenhof.circleimageview.CircleImageView>
         <TextView
 
             android:text="Store Name"
@@ -166,7 +180,9 @@
             android:textSize="16dp"
             android:textStyle="bold"></TextView>
 
-        <TextView
+        <EditText
+            android:layout_marginBottom="20sp"
+
             android:singleLine="true"
             android:background="@drawable/stroke"
             android:hint="Enter your store address"
@@ -178,7 +194,7 @@
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:textSize="14dp"
-            android:layout_height="wrap_content"></TextView>
+            android:layout_height="wrap_content"></EditText>
 
 
         <ProgressBar
@@ -214,12 +230,14 @@
             android:layout_height="wrap_content"></EditText>-->
 
     </LinearLayout>
+</LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/submit"
             android:textStyle="bold"
             android:fontFamily="@font/calibri"
@@ -231,4 +249,4 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Button>
     </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

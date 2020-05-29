@@ -54,9 +54,9 @@
         android:id="@+id/image"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:src="@drawable/newlogotheka"
-        android:layout_width="220dp"
-        android:layout_height="220dp"></ImageView>
+        android:src="@drawable/newlogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"></ImageView>
 
 
 

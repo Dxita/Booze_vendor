@@ -125,18 +125,18 @@ String store, lic, valid, state_name;
         token=SharedHelper.getKey(MapsActivity.this,"token");
 
 
-        final Intent intent=getIntent();
+       /* final Intent intent=getIntent();
         store=intent.getStringExtra("NAME");
         lic=intent.getStringExtra("LIC");
         valid=intent.getStringExtra("VALID");
         state_name=intent.getStringExtra("STATE");
-
-        Log.d("store",store);
+*/
+     /*   Log.d("store",store);
         Log.d("lic",lic);
 
         Log.d("valid",valid);
-
-        Log.d("store_name",state_name);
+*/
+        //Log.d("store_name",state_name);
 
 
 
@@ -191,8 +191,13 @@ String store, lic, valid, state_name;
         continueinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fulladdres = name.getText().toString().trim() + " " +land.getText().toString().trim() + " " + currentlocationstring;
+                Log.d("adress", "onClick: " + fulladdres);
+                Intent intent1=new Intent(getApplicationContext(),StoredetailsActivity.class);
+                intent1.putExtra("ADDRESS",fulladdres);
+                startActivity(intent1);
 
-                if (name.getText().toString().isEmpty()) {
+               /* if (name.getText().toString().isEmpty()) {
                     name.requestFocus();
                     name.setError("Field is empty!");
                 } else if (land.getText().toString().isEmpty()) {
@@ -203,8 +208,8 @@ String store, lic, valid, state_name;
                     Log.d("jh", "onClick: " + adresstype);
                     fulladdres = name.getText().toString().trim() + " " +land.getText().toString().trim() + " " + currentlocationstring;
                     Log.d("adress", "onClick: " + fulladdres);
-
-                api();
+*/
+              //  api();
 
                    // data(latitude, longitude,fulladdres);
                 }
@@ -215,14 +220,14 @@ String store, lic, valid, state_name;
                 mapFragment.getMapAsync(this);*/
 
 
-            }
+
         });
     }
 
     private void api() {
        progressDialog.show();
         RequestQueue requestQueue= Volley.newRequestQueue(this);
-        String url="https://missionlockdown.com/BoozeApp/api/store/add";
+        String url="https://boozeapp.co/Booze-App-Api/api/store/add";
         StringRequest stringRequest=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

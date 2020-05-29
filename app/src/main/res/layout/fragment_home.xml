@@ -33,7 +33,6 @@
     <SearchView
 
         android:id="@+id/searchbar"
-        android:layout_marginTop="10sp"
         android:padding="10sp"
         android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
@@ -50,7 +49,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/topview"
-        android:layout_marginTop="10dp"
         tools:listitem="@layout/filter_item_list" />
 
     <LinearLayout
